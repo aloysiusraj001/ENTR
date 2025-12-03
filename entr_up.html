@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HKUST Entrepreneurship (ENTR) – Integrated Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #222;
+      background-color: #fafafa;
+    }
+    header {
+      background: #900000;
+      color: #fff;
+      padding: 1.5rem 1.5rem 1.25rem;
+    }
+    header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.7rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.25rem;
+    }
+    h3 {
+      margin-top: 1.4rem;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    p {
+      margin: 0.4rem 0 0.6rem;
+    }
+    .tagline {
+      font-style: italic;
+      color: #444;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      margin-left: 0.3rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      background: #eee;
+      color: #555;
+    }
+    .badge-exp {
+      background: #005a9c;
+      color: #fff;
+    }
+    .badge-required {
+      background: #900000;
+      color: #fff;
+    }
+    .badge-fundamental {
+      background: #006644;
+      color: #fff;
+    }
+    .badge-skill {
+      background: #b35f00;
+      color: #fff;
+    }
+    .course-grid {
+      margin-top: 0.75rem;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.9rem;
+      background: #fff;
+    }
+    .course-grid th,
+    .course-grid td {
+      border: 1px solid #ddd;
+      padding: 0.4rem 0.55rem;
+      vertical-align: top;
+    }
+    .course-grid th {
+      background: #f0f0f0;
+      text-align: left;
+      font-weight: 600;
+    }
+    .credits {
+      font-weight: 600;
+    }
+    ul {
+      margin: 0.3rem 0 0.6rem 1.2rem;
+    }
+    .note {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    footer {
+      max-width: 1100px;
+      margin: 0 auto 2rem;
+      padding: 0 1.5rem;
+      font-size: 0.8rem;
+      color: #777;
+    }
+    .highlight-box-red {
+      border: 2px solid #d32f2f;
+      border-radius: 4px;
+      padding: 0.6rem 0.8rem;
+      background-color: #fffafa;
+      margin: 0.6rem 0;
+    }
+
+    /* Pathways overview */
+    .map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.4rem 0 0.6rem;
+      font-size: 0.8rem;
+      color: #555;
+    }
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .legend-core { background: #900000; }
+    .legend-fund { background: #006644; }
+    .legend-skill { background: #b35f00; }
+
+    .pathway-map {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0.8rem 0 1.6rem;
+    }
+    .pathway-column {
+      flex: 1 1 260px;
+      max-width: 340px;
+      background: #ffffff;
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+      padding: 0.8rem 0.9rem;
+    }
+    .pathway-column-header {
+      margin-bottom: 0.4rem;
+    }
+    .pathway-column-header h3 {
+      margin: 0.1rem 0;
+      font-size: 1rem;
+    }
+    .pathway-column-subtitle {
+      font-size: 0.8rem;
+      color: #666;
+    }
+    .pathway-step-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .pathway-box {
+      border-radius: 4px;
+      border: 1px solid #dddddd;
+      padding: 0.45rem 0.55rem;
+      margin-top: 0.4rem;
+      background: #fafafa;
+      font-size: 0.88rem;
+      position: relative;
+    }
+    .pathway-box-core {
+      border-color: #900000;
+      background: #fff5f5;
+    }
+    .pathway-box-fund {
+      border-color: #006644;
+      background: #f5fff8;
+    }
+    .pathway-box-skill {
+      border-color: #b35f00;
+      background: #fff8f0;
+    }
+    .pathway-chip {
+      display: inline-block;
+      margin-top: 0.25rem;
+      margin-right: 0.2rem;
+      padding: 0.05rem 0.35rem;
+      border-radius: 999px;
+      background: #f0f0f0;
+      font-size: 0.75rem;
+      color: #555;
+    }
+    .pathway-note {
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .pathway-arrow-large {
+      align-self: center;
+      font-size: 1.6rem;
+      color: #bbb;
+    }
+
+    /* Pathway A */
+    .pathway-flow {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 0.8rem;
+      margin: 0.5rem 0 1.3rem;
+    }
+    .flow-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
+    }
+    .flow-row-secondary {
+      justify-content: center;
+    }
+    .flow-step {
+      min-width: 190px;
+      max-width: 250px;
+      border-radius: 4px;
+      border: 1px solid #dddddd;
+      background: #fafafa;
+      padding: 0.55rem 0.6rem;
+      font-size: 0.84rem;
+      position: relative;
+    }
+    .flow-step-core {
+      border-color: #900000;
+      background: #fff5f5;
+    }
+    .flow-step-fund {
+      border-color: #006644;
+      background: #f5fff8;
+    }
+    .flow-step-skill {
+      border-color: #b35f00;
+      background: #fff8f0;
+    }
+    .flow-title {
+      font-weight: 600;
+      font-size: 0.86rem;
+      margin-bottom: 0.15rem;
+    }
+    .flow-body {
+      font-size: 0.82rem;
+    }
+    .flow-badge {
+      position: absolute;
+      top: -0.6rem;
+      left: 0.4rem;
+      background: #f0f0f0;
+      padding: 0.04rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #555;
+    }
+    .flow-arrow {
+      font-size: 1.2rem;
+      color: #999;
+      align-self: center;
+    }
+    .flow-arrow.vertical {
+      font-size: 1rem;
+    }
+    .flow-note {
+      font-size: 0.79rem;
+      color: #666;
+      margin-top: 0.4rem;
+    }
+
+    /* Pathway B */
+    .ecosystem-path {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 0.8rem;
+      margin: 0.5rem 0 1.3rem;
+    }
+    .ecosystem-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
+    }
+    .eco-step {
+      min-width: 200px;
+      max-width: 320px;
+      border-radius: 4px;
+      border: 1px solid #dddddd;
+      background: #fafafa;
+      padding: 0.55rem 0.6rem;
+      font-size: 0.83rem;
+      position: relative;
+    }
+    .eco-core {
+      border-color: #900000;
+      background: #fff5f5;
+    }
+    .eco-fund {
+      border-color: #006644;
+      background: #f5fff8;
+    }
+    .eco-branch {
+      border-color: #005a9c;
+      background: #f3f7ff;
+    }
+    .eco-title {
+      font-weight: 600;
+      font-size: 0.86rem;
+      margin-bottom: 0.15rem;
+    }
+    .eco-body {
+      font-size: 0.82rem;
+    }
+    .eco-body ul {
+      margin: 0.3rem 0 0 1rem;
+      padding: 0;
+      font-size: 0.8rem;
+    }
+    .eco-arrow {
+      font-size: 1.2rem;
+      color: #999;
+      align-self: center;
+    }
+    .eco-arrow.vertical {
+      font-size: 1rem;
+    }
+    .eco-badge {
+      position: absolute;
+      top: -0.6rem;
+      left: 0.4rem;
+      background: #f0f0f0;
+      padding: 0.04rem 0.4rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    @media (max-width: 900px) {
+      .pathway-map {
+        flex-direction: column;
+      }
+      .pathway-arrow-large {
+        text-align: center;
+        transform: rotate(90deg);
+      }
+      .flow-row {
+        justify-content: flex-start;
+      }
+      .ecosystem-row {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      main, footer {
+        padding: 1rem;
+      }
+      .course-grid th,
+      .course-grid td {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Entrepreneurship (ENTR) – Integrated Overview</h1>
+    <p>Minor in Entrepreneurship • HKUST Undergraduate Curriculum</p>
+  </header>
+
+  <main>
+    <section>
+      <p class="tagline">
+        The Entrepreneurship (ENTR) curriculum at HKUST supports a mindset–fundamentals–skillset progression for students who want to discover opportunities, build ventures, and engage with entrepreneurial ecosystems.
+      </p>
+    </section>
+
+    <section id="minor-structure">
+      <h2>Entrepreneurship Minor Structure</h2>
+      <p>
+        The Minor in Entrepreneurship is a joint-school program (Science, Engineering, Business &amp; Management, and Academy of Interdisciplinary Studies) with ENTR/ISDN as the offering unit, open to undergraduates meeting the CGA and minor requirements.
+      </p>
+      <p>
+        Students complete at least 18 credits within a three-layer scaffold: one required mindset course, a set of fundamental electives, and skill-set electives that build practical entrepreneurial capabilities.
+      </p>
+
+      <!-- Pathways overview -->
+      <section id="minor-pathways-overview">
+        <h2>How the Entrepreneurship Minor Fits Together</h2>
+        <p>
+          Every Entrepreneurship Minor student shares the same starting point (ENTR 1001), then chooses fundamentals and skill-set courses to create a pathway that fits their interests.
+        </p>
+
+        <div class="map-legend">
+          <span class="legend-item"><span class="legend-dot legend-core"></span> Mindset (Required)</span>
+          <span class="legend-item"><span class="legend-dot legend-fund"></span> Fundamental Electives</span>
+          <span class="legend-item"><span class="legend-dot legend-skill"></span> Skill-set Electives</span>
+        </div>
+
+        <div class="pathway-map">
+          <div class="pathway-column">
+            <div class="pathway-column-header">
+              <div class="pathway-step-label">Start Here</div>
+              <h3>Mindset</h3>
+              <div class="pathway-column-subtitle">Everyone takes this</div>
+            </div>
+            <div class="pathway-box pathway-box-core">
+              <strong>ENTR 1001</strong><br />
+              Entrepreneurship 1001: Designing Your Future
+              <div class="pathway-chip">Explore entrepreneurship</div>
+              <div class="pathway-chip">Design your future</div>
+            </div>
+          </div>
+
+          <div class="pathway-arrow-large">⟶</div>
+
+          <div class="pathway-column">
+            <div class="pathway-column-header">
+              <div class="pathway-step-label">Build Foundations</div>
+              <h3>Fundamentals</h3>
+              <div class="pathway-column-subtitle">Pick a few that fit you</div>
+            </div>
+
+            <div class="pathway-box pathway-box-fund">
+              <strong>ISOM 1380</strong><br />
+              Technology and Innovation: Social and Business Perspectives
+              <div class="pathway-chip">Big picture of innovation</div>
+            </div>
+
+            <div class="pathway-box pathway-box-fund">
+              <strong>MGMT 2011</strong><br />
+              New Venture Creation
+              <div class="pathway-chip">Step‑by‑step venture process</div>
+            </div>
+
+            <div class="pathway-box pathway-box-fund">
+              <strong>ENTR 2010</strong><br />
+              Entrepreneurship Mentorship and Readings
+              <div class="pathway-chip">1‑credit mentoring &amp; reflection</div>
+            </div>
+
+            <div class="pathway-box pathway-box-fund">
+              <strong>ENTR 3030</strong><br />
+              Social Innovations and Entrepreneurship
+              <div class="pathway-chip">Social impact &amp; CSR</div>
+            </div>
+
+            <div class="pathway-box pathway-box-fund">
+              <strong>ENTR 3100</strong><br />
+              Industrial &amp; Deep Tech Landscape
+              <div class="pathway-chip">Understand industries &amp; deep tech</div>
+            </div>
+
+            <div class="pathway-box pathway-box-fund">
+              <strong>ENTR 4901–4904</strong><br />
+              Student‑led Entrepreneurship Acceleration Project
+              <div class="pathway-chip">Turn ideas into real projects</div>
+            </div>
+
+            <p class="pathway-note">
+              Combine 2–4 fundamentals to reach the required credits. You can mix mentoring, social impact, industry, and project‑based courses.
+            </p>
+          </div>
+
+          <div class="pathway-arrow-large">⟶</div>
+
+          <div class="pathway-column">
+            <div class="pathway-column-header">
+              <div class="pathway-step-label">Develop Skills</div>
+              <h3>Skill-Set</h3>
+              <div class="pathway-column-subtitle">Choose what you want to get good at</div>
+            </div>
+
+            <div class="pathway-box pathway-box-skill">
+              <strong>ENTR 3012</strong><br />
+              Growth &amp; Innovation for Tech Startups
+              <div class="pathway-chip">Growth &amp; digital strategy</div>
+            </div>
+
+            <div class="pathway-box pathway-box-skill">
+              <strong>ENTR 3013</strong><br />
+              Prototyping Skills for Entrepreneurs
+              <div class="pathway-chip">Build &amp; test prototypes</div>
+            </div>
+
+            <div class="pathway-box pathway-box-skill">
+              <strong>ENTR 3350 / 3360</strong><br />
+              Global Product &amp; Tech Startups
+              <div class="pathway-chip">Product &amp; venture building</div>
+            </div>
+
+            <div class="pathway-box pathway-box-skill">
+              <strong>Other electives</strong><br />
+              BIBU / COMP / FINA / ISOM / LIFS / MARK / MGMT / OCES / SCIE
+              <div class="pathway-chip">Sector &amp; business skills</div>
+            </div>
+
+            <p class="pathway-note">
+              Skill‑set courses help you deepen in areas like product, growth, finance, IP, biotech, IT, and sustainability.
+            </p>
+          </div>
+        </div>
+      </section>
+    <section id="entr-enrollment">
+      <h2>ENTR Course Enrollment Snapshot (2024–25 &amp; 2025–26)</h2>
+   
+
+      <h3>Academic Year 2024–25</h3>
+
+           <h4>Spring 2025</h4>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Quota</th>
+            <th>Enrolled</th>
+            <th>Available</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENTR 1001</td>
+            <td>Entrepreneurship 1001: Designing Your Future</td>
+            <td class="credits">60</td>
+            <td>48</td>
+            <td>12</td>
+            <td>HUANG, Erwin</td>
+          </tr>
+          <tr>
+            <td>ENTR 3030</td>
+            <td>Social Innovations and Entrepreneurship</td>
+            <td class="credits">30</td>
+            <td>16</td>
+            <td>14</td>
+            <td>HUANG, Erwin</td>
+          </tr>
+          <tr>
+            <td>ENTR 3100</td>
+            <td>Industrial Landscape</td>
+            <td class="credits">40</td>
+            <td>15</td>
+            <td>25</td>
+            <td>CHUN, Daniel</td>
+          </tr>
+          <tr>
+            <td>ENTR 4000C</td>
+            <td>Tech Startup and Entrepreneur&apos;s Ecosystem</td>
+            <td class="credits">30</td>
+            <td>21</td>
+            <td>9</td>
+            <td>PUIG GARRIGO, Coral</td>
+          </tr>
+          <tr>
+            <td>ENTR 4902C</td>
+            <td>Student-led Entrepreneurship Acceleration</td>
+            <td class="credits">15</td>
+            <td>2</td>
+            <td>13</td>
+            <td>TBA</td>
+          </tr>
+          <tr>
+            <td><strong>Spring 2025 Total</strong></td>
+            <td></td>
+            <td class="credits"><strong>175</strong></td>
+            <td><strong>102</strong></td>
+            <td><strong>73</strong></td>
+            <td><strong>58% fill rate</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Summer 2025</h4>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Quota</th>
+            <th>Enrolled</th>
+            <th>Available</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENTR 3360</td>
+            <td>From Product Innovations to Successful Technology Startups</td>
+            <td class="credits">20</td>
+            <td>4</td>
+            <td>16</td>
+            <td>LEUNG, Suk Wai Winnie</td>
+          </tr>
+          <tr>
+            <td>ENTR 4000D</td>
+            <td>Business, Innovation and Technology in HK/GBA</td>
+            <td class="credits">31</td>
+            <td>30</td>
+            <td>1</td>
+            <td>CHAN Yui Bun / LAFON-VINAIS</td>
+          </tr>
+          <tr>
+            <td>ENTR 4000E (Innobay course focused on non-UST students)</td>
+            <td>Start-up Bootcamp</td>
+            <td class="credits">20</td>
+            <td>1</td>
+            <td>19</td>
+            <td>LEUNG, Suk Wai Winnie</td>
+          </tr>
+          <tr>
+            <td><strong>Summer 2025 Total</strong></td>
+            <td></td>
+            <td class="credits"><strong>71</strong></td>
+            <td><strong>35</strong></td>
+            <td><strong>36</strong></td>
+            <td><strong>49% fill rate</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Academic Year 2025–26</h3>
+
+      <h4>Fall 2025–26</h4>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Quota</th>
+            <th>Enrolled</th>
+            <th>Available</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENTR 1001</td>
+            <td>Entrepreneurship 1001: Designing Your Future</td>
+            <td class="credits">60</td>
+            <td>58</td>
+            <td>2</td>
+            <td>HUANG, Erwin</td>
+          </tr>
+          <tr>
+            <td>ENTR 3012</td>
+            <td>Tech startup and entrepreneurs ecosystem</td>
+            <td class="credits">40</td>
+            <td>36</td>
+            <td>4</td>
+            <td>PUIG GARRIGO, Coral</td>
+          </tr>
+          <tr>
+            <td>ENTR 3100</td>
+            <td>Industrial Landscape</td>
+            <td class="credits">30</td>
+            <td>25</td>
+            <td>5</td>
+            <td>HUANG, Erwin</td>
+          </tr>
+          <tr>
+            <td><strong>Fall 2025–26 Total</strong></td>
+            <td></td>
+            <td class="credits"><strong>130</strong></td>
+            <td><strong>119</strong></td>
+            <td><strong>11</strong></td>
+            <td><strong>92% fill rate</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+        <h4>Spring 2025–26 (Projected)</h4>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Quota</th>
+            <th>Enrolled</th>
+            <th>Available</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENTR 1001</td>
+            <td>Entrepreneurship 1001: Designing Your Future (Section 1)</td>
+            <td class="credits">60</td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+             <td>HUANG, Erwin</td>
+          </tr>
+          <tr>
+            <td>ENTR 1001</td>
+            <td>Entrepreneurship 1001: Designing Your Future (Section 2)</td>
+            <td class="credits">60</td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+          </tr>
+          <tr>
+            <td>ENTR 3012</td>
+            <td>Tech Startup and Entrepreneurs Ecosystem</td>
+            <td class="credits">40</td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+            <td>PUIG GARRIGO, Coral</td>
+          </tr>
+          <tr>
+            <td>ENTR 3030</td>
+            <td>Social Innovations and Entrepreneurship</td>
+            <td class="credits">30</td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+             <td>HUANG, Erwin</td>
+          </tr>
+<tr>
+            <td>ENTR 3013</td>
+            <td>Prototyping Skills for Entrepreneurs</td>
+            <td class="credits">30</td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+             <td>C Y Tsui</td>
+          </tr>
+          <tr>
+            <td><strong>Spring 2025–26 Total</strong></td>
+            <td></td>
+            <td class="credits"><strong>190</strong></td>
+            <td><strong><!-- total enrolled --></strong></td>
+            <td><strong><!-- total available --></strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+<h4>Summer 2025–26 (Projected)</h4>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Title</th>
+            <th>Quota</th>
+            <th>Enrolled</th>
+            <th>Available</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENTR 1001</td>
+            <td>Entrepreneurship 1001: Designing Your Future </td>
+            <td class="credits">40</td>
+            <td><!-- fill when known --></td>
+            <td><!-- fill when known --></td>
+           <td><!-- fill when known --></td>
+          </tr>
+          <tr>
+                <tr>
+            <td>ENTR 4000E (Innobay course focused on non-UST students)</td>
+            <td>Start-up Bootcamp</td>
+            <td class="credits">20</td>
+            <td>1</td>
+            <td>19</td>
+            <td>LEUNG, Suk Wai Winnie</td>
+          </tr>
+
+                 <tr>
+            <td><strong>summer 2025–26 Total</strong></td>
+            <td></td>
+            <td class="credits"><strong>60</strong></td>
+            <td><strong><!-- total enrolled --></strong></td>
+            <td><strong><!-- total available --></strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </section>
+
+<h4>Total enrolment places offered (Projected) for academic year 2025-26: 380</h4>
+
+
+      <h3>Required Mindset Course</h3>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Title</th>
+            <th>Credits</th>
+            <th>Role in Minor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              ENTR 1001
+              <span class="badge badge-required">Required</span>
+            </td>
+            <td>
+              Entrepreneurship 1001: Designing Your Future
+            </td>
+            <td class="credits">3</td>
+            <td>
+              Signature foundation course for all Entrepreneurship Minor students; focuses on entrepreneurial mindset, self-discovery, basic opportunity recognition, and project-based experiential learning with entrepreneurs from diverse backgrounds.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Fundamental Electives</h3>
+      <p>
+        Fundamental electives provide core exposure to innovation, social and industrial perspectives, mentoring, and early acceleration.
+      </p>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Title</th>
+            <th>Credits</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ISOM 1380 <span class="badge badge-fundamental">Fundamental</span></td>
+            <td>Technology and Innovation: Social and Business Perspectives</td>
+            <td class="credits">3</td>
+            <td>Introduces how technology and innovation interact with society and business, forming a broad conceptual base for entrepreneurial thinking.</td>
+          </tr>
+          <tr>
+            <td>MGMT 2011 <span class="badge badge-fundamental">Fundamental</span></td>
+            <td>New Venture Creation</td>
+            <td class="credits">3</td>
+            <td>Guides students step-by-step through the new venture creation process, from opportunity evaluation to basic venture planning.</td>
+          </tr>
+          <tr>
+            <td>ENTR 2010 <span class="badge badge-fundamental">Fundamental</span></td>
+            <td>Entrepreneurship Mentorship and Readings</td>
+            <td class="credits">1</td>
+            <td>Mentorship-based course where students explore entrepreneurship through readings, self-directed activities, and consolidation with a faculty mentor.</td>
+          </tr>
+          <tr>
+            <td>ENTR 3030 <span class="badge badge-fundamental">Fundamental</span></td>
+            <td>Social Innovations and Entrepreneurship</td>
+            <td class="credits">3</td>
+            <td>Introduces social enterprises, social innovation models, and corporate social responsibility, emphasizing delivery of social impact through effective operations.</td>
+          </tr>
+          <tr>
+            <td>ENTR 3100 <span class="badge badge-fundamental">Fundamental</span></td>
+            <td>Industrial Landscape: Understanding the Elements to Start a Business</td>
+            <td class="credits">3</td>
+            <td>Surveys industry structures and ecosystems across sectors; students analyze companies and identify opportunities and competitive dynamics.</td>
+          </tr>
+          <tr>
+            <td>ENTR 4901–4904 <span class="badge badge-fundamental">Fundamental</span></td>
+            <td>Student-led Entrepreneurship Acceleration Project</td>
+            <td class="credits">1–4</td>
+            <td>Team-based acceleration projects developing an idea from early stage towards market viability through ideation, prototyping, user feedback, and venture planning, with up to a defined credit cap counting toward fundamental electives.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pathway A -->
+      <section id="pathway-venture-creation">
+        <h3>Example Pathway A: Build Your Own Tech Startup</h3>
+        <p>
+          For students who want to take an idea, prototype it, grow it, and potentially accelerate it while at HKUST.
+        </p>
+
+        <div class="pathway-flow">
+          <div class="flow-row">
+            <div class="flow-step flow-step-core">
+              <div class="flow-badge">Start</div>
+              <div class="flow-title">Discover &amp; Decide</div>
+              <div class="flow-body">
+                <strong>ENTR 1001</strong><br />
+                Design your future, explore problems, and decide whether you want to pursue a startup.
+              </div>
+            </div>
+            <div class="flow-arrow">⟶</div>
+            <div class="flow-step flow-step-fund">
+              <div class="flow-badge">Plan</div>
+              <div class="flow-title">Venture Basics</div>
+              <div class="flow-body">
+                <strong>MGMT 2011</strong><br />
+                Learn the full new venture process, from opportunity evaluation to basic business plan.
+              </div>
+            </div>
+            <div class="flow-arrow">⟶</div>
+            <div class="flow-step flow-step-fund">
+              <div class="flow-badge">Understand</div>
+              <div class="flow-title">Ecosystem &amp; Deep Tech</div>
+              <div class="flow-body">
+                <strong>ENTR 3100</strong><br />
+                Map industries and deep‑tech landscapes; choose where your idea fits.
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-row flow-row-secondary">
+            <div class="flow-arrow vertical">⬇</div>
+          </div>
+
+          <div class="flow-row">
+            <div class="flow-step flow-step-skill">
+              <div class="flow-badge">Build</div>
+              <div class="flow-title">Prototype</div>
+              <div class="flow-body">
+                <strong>ENTR 3013</strong><br />
+                Turn your idea into tangible prototypes (software, hardware, service mock‑ups).
+              </div>
+            </div>
+            <div class="flow-arrow">⟶</div>
+            <div class="flow-step flow-step-skill">
+              <div class="flow-badge">Grow</div>
+              <div class="flow-title">Traction &amp; Growth</div>
+              <div class="flow-body">
+                <strong>ENTR 3012</strong><br />
+                Design experiments, growth loops, and pitches to attract users and investors.
+              </div>
+            </div>
+            <div class="flow-arrow">⟶</div>
+            <div class="flow-step flow-step-skill">
+              <div class="flow-badge">Structure</div>
+              <div class="flow-title">From Project to Startup</div>
+              <div class="flow-body">
+                <strong>ENTR 3360</strong><br />
+                Shape your project into a real technology startup with supply chains, IP, and business model.
+              </div>
+            </div>
+            <div class="flow-arrow">⟶</div>
+            <div class="flow-step flow-step-fund">
+              <div class="flow-badge">Finish (and continue)</div>
+              <div class="flow-title">Acceleration</div>
+              <div class="flow-body">
+                <strong>ENTR 4901–4904</strong><br />
+                Use a project course to accelerate your startup idea, test in the market, and prepare for funding or incubation.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="flow-note">
+          Along this route, you can add finance and law electives (e.g., FINA 2203/2303, ISOM 2030/4020) or sector electives (e.g., COMP 4911 / ENTR 4911, BIBU 4820, LIFS 4820) to tailor your startup to IT, biotech, or other domains.
+        </p>
+      </section>
+
+      <h3>Skill-set Electives</h3>
+      <p>
+        Skill-set electives equip students with practical tools in growth, prototyping, product development, sector-specific entrepreneurship, finance, IP, innovation management, marketing, negotiation, and applied projects.
+      </p>
+      <table class="course-grid">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Title</th>
+            <th>Credits</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ENTR 3012 <span class="badge badge-skill">Skill-set</span></td>
+            <td>Tech Startup and Entrepreneurs Ecosystem: Growth and Innovation</td>
+            <td class="credits">3</td>
+            <td>New ENTR course focused on hands-on growth strategies for technology startups and innovative digital services, combining frameworks such as SAVE and Blue Ocean with investor pitching and digital analytics–based experimentation.</td>
+          </tr>
+          <tr>
+            <td>ENTR 3013 <span class="badge badge-skill">Skill-set</span></td>
+            <td>Prototyping Skills for Entrepreneurs</td>
+            <td class="credits">3</td>
+            <td>New ENTR course providing practical skills to build software, hardware, and mechanical prototypes, integrate components, use rapid prototyping tools, and apply design for manufacturing principles.</td>
+          </tr>
+          <tr>
+            <td>ENTR 3350 / ISDN 3350 <span class="badge badge-skill">Skill-set</span></td>
+            <td>Global Product Development</td>
+            <td class="credits">3</td>
+            <td>Joint project-based course where global, interdisciplinary teams identify user-centered problems and develop engineering design solutions and prototypes across multiple campuses.</td>
+          </tr>
+          <tr>
+            <td>ENTR 3360 / ISDN 3360 <span class="badge badge-skill">Skill-set</span></td>
+            <td>From Product Innovations to Successful Technology Startups</td>
+            <td class="credits">3</td>
+            <td>Guides students from initial product concepts and prototypes toward technology startup formation, covering market research, supply chains, IP, funding, and business models.</td>
+          </tr>
+          <tr>
+            <td>BIBU 4820</td>
+            <td>Biotechnology Entrepreneurship and Business Operations</td>
+            <td class="credits">3</td>
+            <td>Sector-focused course on biotech venture operations and commercialization.</td>
+          </tr>
+          <tr>
+            <td>COMP 4911 / ENTR 4911</td>
+            <td>IT Entrepreneurship</td>
+            <td class="credits">3</td>
+            <td>Covers elements of starting and operating information technology ventures, including business planning, financing, legal aspects, and case studies.</td>
+          </tr>
+          <tr>
+            <td>FINA 2203 / 2303</td>
+            <td>Fundamentals of Business Finance / Financial Management</td>
+            <td class="credits">3</td>
+            <td>Provides finance foundations relevant for evaluating and managing startup financial decisions.</td>
+          </tr>
+          <tr>
+            <td>IEDA 2150 / 2200</td>
+            <td>Product Design / Engineering Management</td>
+            <td class="credits">3</td>
+            <td>Develops design and management skills that support technology and product-oriented ventures.</td>
+          </tr>
+          <tr>
+            <td>ISOM 2030</td>
+            <td>Business Protections for Innovations</td>
+            <td class="credits">3</td>
+            <td>Introduces IP and related protections for innovations in business and technology contexts.</td>
+          </tr>
+          <tr>
+            <td>ISOM 4020</td>
+            <td>Innovation Management and Technology Entrepreneurship</td>
+            <td class="credits">3</td>
+            <td>Addresses innovation processes, technology entrepreneurship, and corporate innovation practices.</td>
+          </tr>
+          <tr>
+            <td>LIFS 4820</td>
+            <td>Entrepreneurship in Biotechnology</td>
+            <td class="credits">3</td>
+            <td>Covers science-based innovation and venture topics in life sciences.</td>
+          </tr>
+          <tr>
+            <td>MARK 2120</td>
+            <td>Marketing Management</td>
+            <td class="credits">3</td>
+            <td>Provides core marketing concepts and tools that underpin startup customer and market strategies.</td>
+          </tr>
+          <tr>
+            <td>MGMT 3140 / 4220</td>
+            <td>Negotiation / Entrepreneurship and Innovation</td>
+            <td class="credits">4</td>
+            <td>Develops negotiation skills and advanced perspectives on entrepreneurship and innovation for would-be founders and leaders.</td>
+          </tr>
+          <tr>
+            <td>OCES 4301</td>
+            <td>Environmental Conservation</td>
+            <td class="credits">3</td>
+            <td>Provides context for environmental and green ventures with conservation and sustainability themes.</td>
+          </tr>
+          <tr>
+            <td>SCIE 4860</td>
+            <td>Young Entrepreneurial Syndicate in Applied Sciences Project</td>
+            <td class="credits">3</td>
+            <td>Applied science project course with entrepreneurial elements and team-based project work.</td>
+          </tr>
+          <tr>
+            <td>IEDA 4170</td>
+            <td>Product Design and Lifecycle Management</td>
+            <td class="credits">3</td>
+            <td class="note">Removed from the Entrepreneurship Minor elective list because it has not been offered in recent years and has been deleted from the catalog.</td>
+          </tr>
+          <tr>
+            <td>ISOM 4820</td>
+            <td>Revenue Management</td>
+            <td class="credits">3</td>
+            <td class="note">Removed from the Entrepreneurship Minor elective list because it has not been offered in recent years and has been deleted from the catalog.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Highlighted proposed courses -->
+      <div class="highlight-box-red">
+        <h3>Indicative Proposed New ENTR Courses</h3>
+        <p>
+          Building on the gaps identified and HKUST’s disciplinary strengths, a set of indicative ENTR-branded courses can be considered for future development; codes and titles are placeholders to be refined through formal curriculum processes.
+        </p>
+        <table class="course-grid">
+          <thead>
+            <tr>
+              <th>Proposed Course (Indicative)</th>
+              <th>Gap Addressed</th>
+              <th>Indicative Lead Profile</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ENTR 33xx – Growth, Analytics, and Experimentation for Startups</td>
+              <td>Growth, data, and experimentation</td>
+              <td>Marketing/analytics faculty with digital product background plus ENTR faculty with scaling experience.</td>
+              <td>Emphasizes customer acquisition, funnels, A/B testing, product analytics, and growth loops, extending and deepening ENTR 3012 content.</td>
+            </tr>
+            <tr>
+              <td><b>UPDATED</b> ENTR 3100 – Industrial &amp; Deep Tech Landscape: Understanding the Elements to Start a Business</td>
+              <td>Industrial / deep‑tech sector lab (lite)</td>
+              <td>Co‑run by ENTR and relevant disciplinary faculty from Engineering, Science, and Business &amp; Management, with external partners such as lab PIs, corporate innovators, and industry experts contributing sector cases and project briefs.</td>
+              <td>Project‑based course where cross‑disciplinary teams map industrial and deep‑tech ecosystems, engage with enabling technologies, and frame evidence‑based venture opportunity spaces that can later articulate into ENTR 3360 and ENTR 490x acceleration courses.</td>
+            </tr>
+          <tr>
+            <td><b>UPDATED</b> ENTR 4911 – IT Entrepreneurship</td>
+            <td>IT venture strategy and execution</td>
+            <td>Jointly offered as ENTR 4911 / COMP 4911, drawing on faculty with experience in software, platforms, and digital business, plus external entrepreneurs and investors who bring current startup and funding perspectives.</td>
+            <td>Case- and project-based course where teams analyze real IT ventures, design business models and plans around an “unfair” advantage, and develop investor-style pitches that integrate technology, market, financing, and exit considerations.</td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="entr-courses">
+      <h2>ENTR Course Descriptions (2025–26)</h2>
+      <p>
+        This section consolidates ENTR-coded courses listed in the 2025–26 undergraduate course catalog together with the Entrepreneurship Minor documentation, focusing on course purpose and intended learning outcomes at a summary level.
+      </p>
+ <div class="highlight-box-red">
+      <h3>ENTR 1001 – Entrepreneurship 1001: Designing Your Future</h3>
+      <p>
+        ENTR 1001 is a common core, experiential course where students from any discipline work in teams to design, launch, and grow a simple online business while reflecting on their own future paths as innovators and entrepreneurs.
+      </p>
+      <p>
+        The assessment structure is deliberately designed to walk students through the full entrepreneurial cycle: forming teams, understanding customers, building and testing offerings, communicating value, and consolidating personal learning.
+      </p>
+      <ul>
+        <li><strong>Team formation and participation:</strong> attendance, in-class activities, and a team-building workshop ensure students commit to their team, practice collaboration under uncertainty, and build core teamwork habits needed for entrepreneurial projects.</li>
+        <li><strong>Customer and market understanding:</strong> business model and market research tasks (such as customer journey mapping, funnels, competitor analysis, and customer discovery assignments) train students to see problems through users’ eyes and to structure opportunities using tools like the Business Model Canvas.</li>
+        <li><strong>Running an online business:</strong> shop set‑up, marketing assignments, and growth experiments require each team to operate an actual or simulated online venture, make basic pricing and positioning decisions, and learn from real customer responses.</li>
+        <li><strong>Prototyping and testing:</strong> prototype assignments (software, hardware, or service mock‑ups) and simple user tests develop students’ design thinking skills—building, showing, gathering feedback, and refining their solutions based on evidence.</li>
+        <li><strong>Communication and pitching:</strong> midterm and final presentations (often supported by decks, videos, or campaign pages) help students practice structuring a compelling story about their idea, progress, and learning for a mixed audience of instructors, peers, and guest entrepreneurs.</li>
+        <li><strong>Reflection and personal development:</strong> speaker reflections, teamwork reflections, and a personal development journal connect course activities back to students’ own strengths, values, and career design, reinforcing ENTR 1001 as a “designing your future” experience rather than a purely business exercise.</li>
+        <li><strong>Peer evaluation and feedback culture:</strong> structured peer evaluation at key milestones encourages students to give and receive constructive feedback, recognize contributions within the team, and internalize professional norms around accountability and collaboration.</li>
+      </ul>
+</div>
+      <h3>ENTR 2010 – Entrepreneurship Mentorship and Readings</h3>
+      <p>
+        ENTR 2010 combines mentorship and curated readings to expose students to entrepreneurship in a flexible, interest-driven way, graded on a pass/fail basis.
+      </p>
+      <ul>
+        <li>Students engage with a mentor, choose focus areas to study, and participate in entrepreneurship activities; experiences are later consolidated with the instructor.</li>
+        <li>Key outcomes include understanding success and failure factors of startups, common entrepreneurial terminology, risks and benefits of entrepreneurship, and fit with personal career goals.</li>
+      </ul>
+
+      <h3>ENTR 3012 – Tech Startup and Entrepreneurs Ecosystem: Growth and Innovation</h3>
+      <p>
+        ENTR 3012 provides hands-on experience in developing and implementing growth strategies for early-stage technology startups and digital services, emphasizing startup ecosystems and practitioner engagement.
+      </p>
+      <ul>
+        <li>Students apply tools and frameworks such as the SAVE model and Blue Ocean ideas to analyze markets, craft value propositions, design growth campaigns, and develop investor pitches.</li>
+        <li>Assessment typically includes in-class and preparatory work, a major project, and attainment of digital analytics certifications that support data-driven experimentation.</li>
+      </ul>
+<div class="highlight-box-red">
+            <h3>ENTR 3013 – Prototyping Skills for Entrepreneurs</h3>
+      <p>
+        ENTR 3013 is a hands-on, lab-based course that teaches students how to turn entrepreneurial ideas into tangible prototypes across physical and embedded-system domains. The course emphasizes rapid, iterative prototyping as a way to explore concepts, communicate with stakeholders, and de‑risk early venture ideas.
+      </p>
+      <p>
+        Students are introduced to key prototyping principles, then select and complete two focused five‑week skill-set modules (one in physical prototyping and one in embedded systems) before applying what they have learned in an integrated final project that showcases their prototype and communicates its value.
+      </p>
+      <ul>
+        <li><strong>Enhanced learning outcomes:</strong> by the end of the course, students will be able to:
+          <ul>
+            <li>Explain why prototyping is critical in concept development, communication, and product development cycles, and distinguish between different types of prototypes and their purposes.</li>
+            <li>Plan and execute iterative prototyping cycles that move from rough concepts to increasingly refined representations based on user and stakeholder feedback.</li>
+            <li>Select appropriate tools, materials, and technologies (e.g., 3D CAD, 3D printing, embedded processors, sensors) to realize a prototype that demonstrates key features of an entrepreneurial idea.</li>
+            <li>Integrate hardware and/or embedded systems into prototypes where relevant, including basic electronics, input/output control, and simple IoT connections.</li>
+            <li>Communicate a prototype’s value proposition effectively through demonstrations, presentations, and documentation tailored to potential users, partners, or investors.</li>
+            <li>Collaborate in small teams to scope, build, test, and present a prototype that could feed into more advanced venture-building courses or competitions.</li>
+          </ul>
+        </li>
+        <li><strong>Course flow by week:</strong>
+          <ul>
+            <li><em>Weeks 1–2 – Prototyping foundations:</em> introduction to rapid prototyping, why it matters for entrepreneurs, types of prototypes (low‑fidelity vs. high‑fidelity), and how iterative prototyping links to product development.</li>
+            <li><em>Weeks 3–7 – Skill-set Module I (Physical Prototyping):</em> students dive into digital modeling and physical fabrication:
+              <ul>
+                <li>Basic 3D concepts and 3D CAD tools; Boolean operations and constructive solid geometry.</li>
+                <li>Free‑form modeling and scratch modeling using CAD software.</li>
+                <li>3D printing principles, methods, materials, and limitations.</li>
+                <li>Post‑processing and complementary tools such as laser cutters and water‑jet cutters for 2.5D work.</li>
+              </ul>
+            </li>
+            <li><em>Weeks 8–12 – Skill-set Module II (Embedded System Prototyping):</em> students build foundational embedded and IoT skills:
+              <ul>
+                <li>Introduction to embedded systems and basic electronics; where and why embedded processors are used.</li>
+                <li>Embedded processor hardware, basic digital logic, and simple computing structures.</li>
+                <li>Embedded software concepts and programming models for simple applications.</li>
+                <li>Input/output control and interfacing sensors and actuators with embedded processors.</li>
+                <li>Basic IoT ideas: sensor types, actuation, and connecting devices to gather data or trigger actions.</li>
+              </ul>
+            </li>
+            <li><em>Week 13 – Integrated project execution and presentation:</em> teams use the skills from both modules to develop and present a working prototype (physical and/or embedded), accompanied by a short explanation of the concept, target users, and next steps.</li>
+          </ul>
+        </li>
+        <li><strong>Assessment focus (indicative):</strong> assessment can include individual lab participation and checkpoint tasks (e.g., CAD exercises, simple embedded programs), module mini‑projects, and a final team prototype plus presentation. The balance is designed to reward both technical skill development and the ability to use prototypes to tell a clear entrepreneurial story.</li>
+        <li><strong>Position in the ENTR pathway:</strong> ENTR 3013 is an ideal follow‑on to ENTR 1001 and ENTR 3100 for students who have identified promising ideas or sectors and now need tangible prototypes. It also pairs naturally with ENTR 3012 (growth) and ENTR 3360/ENTR 490x for students who want to move from “prototype” to “startup”.</li>
+      </ul></div>
+
+
+      <h3>ENTR 3030 – Social Innovations and Entrepreneurship</h3>
+      <p>
+        ENTR 3030 addresses how social enterprises and commercial entities can deliver social impact beyond what traditional government or charity models can easily achieve.
+      </p>
+      <ul>
+        <li>Topics include social enterprise objectives and business models, CSR, sustainability, team building, case studies, and strategies for social innovation, often supported by site visits and projects.</li>
+        <li>Students learn to identify social issues and explore models and operations that create measurable social value.</li>
+      </ul>
+<div class="highlight-box-red">
+      <h3>ENTR 3100 – Industrial &amp; Deep Tech Landscape: Understanding the Elements to Start a Business</h3>
+      <p>
+        ENTR 3100 acquaints students with the landscapes of selected industries by examining the elements required to start a business and the structure of key markets within those sectors. Students explore how companies, technologies, regulations, and customers interact in an industrial ecosystem, and how this interaction creates both constraints and openings for new ventures.
+      </p>
+      <p>
+        In each offering, the course focuses on one or two thematic sectors (for example, aging and the silver economy, AI‑enabled services, robotics in logistics or healthcare, green and climate‑tech solutions, or biotech applications). Within these sectors, students engage with enabling technologies, key processes, business models, regulatory issues, and case studies of both incumbents and startups. They then translate this sector understanding into concrete venture opportunity spaces, including those based on deep tech or university research.
+      </p>
+      <p>
+        The course is jointly run by the Schools of Engineering, Science, and Business &amp; Management, and may involve external partners (such as banks, technology firms, or deep‑tech labs) who co‑design project briefs and interact with student teams. This joint delivery ensures that students see how scientific discovery, engineering capabilities, and business models come together inside real industrial and entrepreneurial ecosystems.
+      </p>
+      <ul>
+        <li><strong>Enhanced learning outcomes:</strong> by the end of the course, students will be able to:
+          <ul>
+            <li>Analyze interaction and power dynamics among different companies and stakeholders in an industry, including incumbents, startups, regulators, customers, and technology providers.</li>
+            <li>Understand the competitiveness, value chains, and business models of industrial and deep‑tech sectors, including how technology trends reshape these structures over time.</li>
+            <li>Develop empathy toward specific ecosystems and user groups (for example, aging populations, industrial clients, patients, climate‑stressed communities) through interviews, site visits, and data collection.</li>
+            <li>Identify and articulate venture opportunities in a chosen sector, including opportunities that leverage deep technologies such as AI, robotics, biotech, or climate‑tech and could be developed further in capstone or acceleration courses.</li>
+            <li>Perform effective teamwork and communication in cross‑disciplinary groups, including co‑creating ecosystem maps, opportunity briefs, and sector‑focused pitches.</li>
+            <li>Present clear, evidence‑based “sector venture briefs” that connect ecosystem analysis, user needs, enabling technologies, and potential business models.</li>
+          </ul>
+        </li>
+        <li><strong>Sector focus per term:</strong> to provide depth as well as breadth, each semester emphasizes one or two focal areas such as:
+          <ul>
+            <li>Aging &amp; Silver Economy (e.g., healthtech, elder‑care robotics, fintech for seniors).</li>
+            <li>AI‑enabled services (e.g., AI in education, financial services, logistics, or creative industries).</li>
+            <li>Robotics &amp; automation (e.g., warehouse automation, service robots, industrial robotics).</li>
+            <li>Climate‑tech and green solutions (e.g., energy, mobility, circular economy, smart buildings).</li>
+            <li>Biotech and life‑science applications (e.g., diagnostics, med‑tech, agri‑tech).</li>
+          </ul>
+          Students are assigned or self‑select into cross‑disciplinary teams aligned with these sectors so that technical, business, and social perspectives are represented.
+        </li>
+        <li><strong>Core learning activities:</strong> the course is structured around a sequence of linked activities:
+          <ul>
+            <li><em>Industry and ecosystem mapping:</em> teams map key actors, value flows, regulations, technologies, and pain points in their chosen sector, producing visual ecosystem maps and short analytical write‑ups.</li>
+            <li><em>Deep dives into enabling technologies:</em> sessions led by disciplinary faculty or invited experts introduce sector‑relevant technologies (for example, AI models, sensor systems, bioprocesses, or climate‑monitoring tools) and their commercialization pathways.</li>
+            <li><em>Guest talks and panels:</em> industry partners, deep‑tech labs, and startup founders share cases on how they navigate their ecosystem, which students later reference in their analyses and opportunity briefs.</li>
+            <li><em>Customer and stakeholder interviews:</em> teams identify and interview potential users, customers, or stakeholders in their sector to validate pain points and refine their ecosystem view.</li>
+            <li><em>Opportunity‑framing assignments:</em> students produce problem/opportunity statements, preliminary business models, and simple “what‑if” scenarios that connect ecosystem insights to candidate venture ideas.</li>
+            <li><em>Final sector venture brief and pitch:</em> each team delivers a concise written brief and a pitch that describe their ecosystem, a specific opportunity space, proposed solution directions, enabling technologies involved, and possible next steps (for example, moving into ENTR 3360 or ENTR 490x).</li>
+          </ul>
+        </li>
+        <li><strong>Assessment focus (indicative):</strong> assessment can include individual participation and reflections (on sector talks, site visits, and user interviews), group ecosystem maps and analysis reports, opportunity‑framing assignments, and the final sector venture brief and team presentation. This mix ensures that both rigorous sector analysis and entrepreneurial creativity are recognized.</li>
+        <li><strong>Position in the ENTR pathway:</strong> ENTR 3100 serves as a bridge between mindset courses (such as ENTR 1001) and more execution‑oriented courses (such as ENTR 3012, ENTR 3013, ENTR 3360, and ENTR 490x). Teams that identify promising opportunities can carry these ideas forward into prototyping, growth, and acceleration courses.</li>
+        <li><strong>Staffing model:</strong> a core ENTR instructor coordinates the course and overall assessment, while sector‑specific faculty and external partners provide targeted inputs (guest lectures, project briefs, feedback). This structure makes it possible to run different sector themes in different semesters without redesigning the entire course each time.</li>
+      </ul>
+</div>
+      <!-- Pathway B -->
+      <section id="pathway-social-ecosystem">
+        <h3>Example Pathway B: Social Impact &amp; Ecosystem Explorer</h3>
+        <p>
+          For students who want to understand social challenges, industry ecosystems, and deep‑tech contexts before deciding whether to start something or join existing ventures.
+        </p>
+
+        <div class="ecosystem-path">
+          <div class="ecosystem-row">
+            <div class="eco-step eco-core">
+              <div class="eco-badge">Start</div>
+              <div class="eco-title">Discover Yourself</div>
+              <div class="eco-body">
+                <strong>ENTR 1001</strong><br />
+                Explore your interests and values, and learn how innovation can shape future careers.
+              </div>
+            </div>
+            <div class="eco-arrow">⟶</div>
+            <div class="eco-step eco-fund">
+              <div class="eco-badge">Focus</div>
+              <div class="eco-title">Social Innovation</div>
+              <div class="eco-body">
+                <strong>ENTR 3030</strong><br />
+                Understand social enterprises, CSR, and how innovation can create social impact.
+              </div>
+            </div>
+            <div class="eco-arrow">⟶</div>
+            <div class="eco-step eco-fund">
+              <div class="eco-badge">Understand</div>
+              <div class="eco-title">Ecosystems &amp; Deep Tech</div>
+              <div class="eco-body">
+                <strong>ENTR 3100</strong><br />
+                Learn how companies, technologies, and regulations interact in sectors such as AI, climate‑tech, or biotech.
+              </div>
+            </div>
+          </div>
+
+          <div class="ecosystem-row">
+            <div class="eco-arrow vertical">⬇</div>
+          </div>
+
+          <div class="ecosystem-row">
+            <div class="eco-step eco-branch">
+              <div class="eco-badge">Choose</div>
+              <div class="eco-title">Impact &amp; Sector Courses</div>
+              <div class="eco-body">
+                Deepen in a direction that fits you:
+                <ul>
+                  <li><strong>BIBU 4820 / LIFS 4820</strong> – Biotech &amp; life sciences ventures</li>
+                  <li><strong>OCES 4301</strong> – Environment &amp; green ventures</li>
+                  <li><strong>SCIE 4860</strong> – Applied science projects with entrepreneurial angle</li>
+                  <li><strong>ISOM 4020</strong> – Innovation management &amp; tech entrepreneurship</li>
+                </ul>
+              </div>
+            </div>
+            <div class="eco-arrow">⟶</div>
+            <div class="eco-step eco-branch">
+              <div class="eco-badge">Do</div>
+              <div class="eco-title">Projects &amp; Next Steps</div>
+              <div class="eco-body">
+                Turn your insights into action:
+                <ul>
+                  <li>Lead or join a project in <strong>ENTR 4901–4904</strong> (social or deep‑tech focus).</li>
+                  <li>Pick skill‑set courses like <strong>ENTR 3013</strong> (prototyping) or <strong>ENTR 3012</strong> (growth) to make your ideas more concrete.</li>
+                  <li>Use what you learn to join NGOs, social enterprises, corporate innovation teams, or start your own impact venture later.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h3>ENTR 3350 – Global Product Development</h3>
+      <p>
+        ENTR 3350 (also ISDN 3350) is a joint lecture and project-based course in which global, interdisciplinary teams identify problems, design solutions, and build prototypes with partner institutions in multiple cities.
+      </p>
+      <ul>
+        <li>Students perform market research, apply design tools and systems engineering, and collaborate internationally across online and face-to-face sessions.</li>
+        <li>They learn to articulate customer needs, design global products, collaborate in diverse teams, and present outcomes in public exhibitions.</li>
+      </ul>
+
+      <h3>ENTR 3360 – From Product Innovations to Successful Technology Startups</h3>
+      <p>
+        ENTR 3360 (also ISDN 3360) targets students who wish to seriously pursue technology startups, building from existing project ideas and prototypes toward more complete venture concepts.
+      </p>
+      <ul>
+        <li>Lecture and mentoring topics span market research, industrial design, IP, supply chains, business models, and funding and incubation opportunities.</li>
+        <li>Students analyze successful case studies, explore business opportunities from technology innovation, and connect with manufacturing and sales networks.</li>
+      </ul>
+
+      <h3>ENTR 4000 – Special Topics in Entrepreneurship</h3>
+      <p>
+        ENTR 4000 covers selected emerging or hot topics in entrepreneurship that are not yet part of regular ENTR offerings.
+      </p>
+      <ul>
+        <li>The course may be graded using different schemes, and students can repeat it for credit when topics differ.</li>
+        <li>Across offerings, it aims to strengthen entrepreneurial mindsets and the ability to create or increase value in organizations.</li>
+      </ul>
+<div class="highlight-box-red">
+      <h3>ENTR 4911 – IT Entrepreneurship</h3>
+      <p>
+        ENTR 4911 (alternate code COMP 4911) focuses on the process of starting and growing information technology ventures, from recognizing an opportunity and shaping an “unfair” advantage to planning for funding and eventual exit. The course sits at the intersection of technology, business, and law, using real startup and corporate cases from Hong Kong and other ecosystems.
+      </p>
+      <p>
+        Students explore what makes IT ventures different from conventional businesses, how to design robust business models and plans, and how to navigate funding stages, intellectual property, and governance issues. The course uses a mix of lectures, case discussions, and a substantial team project to help students experience what it takes to move an IT startup from concept toward execution.
+      </p>
+      <ul>
+        <li><strong>Enhanced learning outcomes:</strong> by the end of the course, students will be able to:
+          <ul>
+            <li>Identify the key principles and practices involved in founding or joining an IT startup and recognize common pitfalls that lead to failure.</li>
+            <li>Summarize core concepts in IT entrepreneurship, including opportunity evaluation, value proposition design, business models, funding mechanisms, and exit options.</li>
+            <li>Recognize and act on opportunities to build both an enterprise and a personal business network within local and global tech ecosystems.</li>
+            <li>Evaluate potential IT business opportunities and make reasoned recommendations about whether and how to pursue them.</li>
+          </ul>
+        </li>
+        <li><strong>Typical topics covered:</strong>
+          <ul>
+            <li>Entrepreneurial mindset in IT: opportunity recognition, unfair advantage, and founder–market fit.</li>
+            <li>SWOT and competitive analysis for tech ventures; business models and business plan writing for software, platforms, and digital products.</li>
+            <li>Technology, intellectual property, and corporate structures relevant to IT startups; the role of angels, venture capital, and other funding sources from seed to IPO.</li>
+            <li>Market and ecosystem analysis for key regions such as Hong Kong, mainland China, and global tech hubs; comparison of different startup environments.</li>
+            <li>Case studies of successful and failed IT ventures, including large tech firms and local startups, often supported by guest talks from practitioners.</li>
+          </ul>
+        </li>
+        <li><strong>Assessment focus (indicative):</strong>
+          <ul>
+            <li>Class participation and contribution to discussions and case analyses.</li>
+            <li>Group project in which teams develop a business plan for an IT venture and deliver midterm and final pitches or presentations.</li>
+            <li>A written exam or in-class test to check understanding of core concepts, plus short write-ups on talks, seminars, or competitions where appropriate.</li>
+          </ul>
+        </li>
+        <li><strong>Position in the ENTR pathway:</strong> ENTR 4911 is best suited for students who already have some exposure to entrepreneurship (e.g., through ENTR 1001, ENTR 3100, ENTR 3012, or ENTR 3360) and want a focused capstone-style experience in IT and digital ventures. It complements technical majors by showing how to turn computing skills into viable startup opportunities and complements the Entrepreneurship Minor by adding a strong IT-specialized layer.
+        </li>
+      </ul>
+</div>
+      <h3>ENTR 4901–4904 – Student-led Entrepreneurship Acceleration Project</h3>
+      <p>
+        ENTR 4901–4904 are project courses where small student teams accelerate an entrepreneurial endeavor with guidance from a faculty advisor.
+      </p>
+      <ul>
+        <li>Activities include ideation, prototyping, operations planning, experiments, market surveys, user feedback, business planning, soft-launches, and pivoting.</li>
+        <li>Students synthesize technical, business, and user insights to evaluate venture survivability and societal impact, and build personal and professional networks.</li>
+      </ul>
+
+     
+    </section>
+  </main>
+
+  <footer>
+  
+  </footer>
+</body>
+</html>
