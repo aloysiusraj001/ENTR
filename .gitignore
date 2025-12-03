@@ -1,0 +1,85 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary Files
+*.tmp
+*.bak
+*.log
+*.cache
+
+# Build and Output Directories
+build/
+dist/
+out/
+target/
+
+# Dependencies and Packages
+node_modules/
+vendor/
+*.pyc
+__pycache__/
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Office and Document Temp Files
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+*.tmp
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+# PDF build artifacts (if generating from source)
+*.synctex.gz
+
+# Solution Keys and Private Materials
+admin/solutions/
+admin/grading_keys/
+admin/private/
+
+# Student Submissions (if stored locally)
+submissions/
+student_work/
